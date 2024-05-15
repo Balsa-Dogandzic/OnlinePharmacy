@@ -7,11 +7,9 @@
 
     <title>E-pharmacy</title>
 
-    <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="../Images/Icons/favicon.ico">
+    <link rel="icon" type="image/x-icon" href="{{url_for('static', filename='Images/Icons/favicon.ico')}}">
 
-    <!-- Styles -->
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}">
 
     <script src="https://kit.fontawesome.com/3e58fdca93.js" crossorigin="anonymous"></script>
 
@@ -19,55 +17,33 @@
 
 <body>
 
-    <nav class="navbar">
-        <div class="logo">
-            <a href="index.html">
-                <img src="../Images/logo.png" alt="Logo">
-            </a>
-        </div>
-        <ul class="nav-links">
-            <li><a href="index.html" class="active">Pocetna</a></li>
-            <li><a href="about.html">O nama</a></li>
-            <li class="dropdown">
-                <a href="#" class="dropbtn">Proizvodi</a>
-                <div class="dropdown-content">
-                    <a href="products.html/vitamini">Vitamini</a>
-                    <a href="products.html/ljekovi">Ljekovi</a>
-                    <a href="products.html/za_djecu">Za djecu</a>
-                </div>
-            </li>
-            <li><a href="contact.html">Kontakt</a></li>
-            <li><a href="logIn.html" class="always_active">Log in</a></li>
-        </ul>
-        <div class="cart-icon">
-            <a href="user_cart.html">
-                <img src="../Images/basket.png" alt="Cart">
-            </a>
-        </div>
-    </nav>
+    {% include 'components/nav.html' %}
 
     <div class="big-container">
         <div class="slider">
             <div class="slides">
-                <div class="slide active" style="background-image: url('../Images/slider1.jpg');">
+                <div class="slide slide-1 active"
+                    style="background-image: url('{{url_for('static',filename='Images/slider1.jpg')}}');">
                     <div class="content">
                         <h1>Zdravlje na prvom mjestu!</h1>
                         <p>Pogledajte proizvode koje nudimo.</p><br>
-                        <a href="page1.html" class="button">Pogledajte proizvode</a>
+                        <a href="#" class="button">Pogledajte proizvode</a>
                     </div>
                 </div>
-                <div class="slide" style="background-image: url('../Images/slider2.jpg');">
+                <div class="slide slide-2"
+                    style="background-image: url('{{url_for('static',filename='Images/slider2.jpg')}}');">
                     <div class="content">
                         <h1>Kvalitet za vašu dobrobit!</h1>
                         <p>Otkrijte našu paletu proizvoda za zdraviji život.</p><br>
-                        <a href="page2.html" class="button">Pogledajte proizvode</a>
+                        <a href="#" class="button">Pogledajte proizvode</a>
                     </div>
                 </div>
-                <div class="slide" style="background-image: url('../Images/slider3.jpg');">
+                <div class="slide slide-3"
+                    style="background-image: url('{{url_for('static',filename='Images/slider3.jpg')}}');">
                     <div class="content">
                         <h1>Briga o vašem zdravlju, naša prednost!</h1>
                         <p>Inspirišite se našim proizvodima za svaki aspekt vašeg zdravlja.</p><br>
-                        <a href="page3.html" class="button">Pogledajte proizvode</a>
+                        <a href="#" class="button">Pogledajte proizvode</a>
                     </div>
                 </div>
             </div>
@@ -85,12 +61,12 @@
             </div>
             <div class="half-below-slider">
                 <h1>Ljekovi</h1>
-                <p>Paragraf 1</p>
+                <p>Omogucavamo nasim pacijentima da online poruce terapiju koja im je propisana.</p>
                 <a href="#" class="button">Ponuda ljekova</a>
             </div>
             <div class="half-below-slider">
                 <h1>Za djecu</h1>
-                <p>Paragraf 1</p>
+                <p>Sve vrste sirupa, septoleta i ljekova za nase malisane.</p>
                 <a href="#" class="button">Ponuda za djecu</a>
             </div>
         </div>
@@ -100,34 +76,34 @@
         <h1>Naš asortiman proizvoda</h1>
         <div class="products">
             <div class="product">
-                <img src="../Images/Products/1vitaminD.webp">
+                <img src="{{url_for('static',filename='Images/Products/1vitaminD.webp')}}">
                 <h2>Vitamin D</h2>
                 <p>Namijenjen za djecu i odrasle.</p>
             </div>
             <div class="product">
-                <img src="../Images/Products/2vitaminA.webp">
+                <img src="{{url_for('static',filename='Images/Products/2vitaminA.webp')}}">
                 <h2>Vitamin A</h2>
                 <p>Namijenjen za djecu i odrasle.</p>
             </div>
             <div class="product">
-                <img src="../Images/Products/3vitaminB.png">
+                <img src="{{url_for('static',filename='Images/Products/3vitaminB.png')}}">
                 <h2>Vitamin B</h2>
                 <p>Namijenjen za djecu i odrasle.</p>
             </div>
         </div>
         <div class="products">
             <div class="product">
-                <img src="../Images/Products/4vitaminC.webp">
+                <img src="{{url_for('static',filename='Images/Products/4vitaminC.webp')}}">
                 <h2>Vitamin C</h2>
                 <p>Namijenjen za djecu i odrasle.</p>
             </div>
             <div class="product">
-                <img src="../Images/Products/5vitaminE.png">
+                <img src="{{url_for('static',filename='Images/Products/5vitaminE.png')}}">
                 <h2>Vitamin E</h2>
                 <p>Namijenjen za djecu i odrasle.</p>
             </div>
             <div class="product">
-                <img src="../Images/Products/6zaDjecu.webp">
+                <img src="{{url_for('static',filename='Images/Products/6zaDjecu.webp')}}">
                 <h2>Sirup Motrin</h2>
                 <p>Namijenjen isključivo za djecu do 9 godina.</p>
             </div>
@@ -138,41 +114,9 @@
         <button class="button" id="show_more_button">Pogledajte sve proizvode</button>
     </div>
 
+    {% include 'components/footer.html' %}
 
-    <footer class="footer">
-        <div class="container-for-footer">
-            <div class="footer-content">
-                <div class="footer-section about">
-                    <h2 class="logo"><a href="index.html">E-Pharmacy</a></h2>
-                    <p><b>E-Pharmacy</b> je online apoteka preko koje korisnici mogu napisati recept (porudžbinu) za ljekove koji su im potrebni.<br>Farmaceut može imati uvid u ove porudžbine i spremiti ih za pacijenta.</br></p>
-                    <div class="contact">
-                        <span><i class="fas fa-envelope"></i> <a href="mailto:e-pharmacy@outlook.com" class="link-fo"> e-pharmacy@outlook.com</a></span>
-                    </div>
-                </div>
-                <div class="footer-section links">
-                    <h2>Brzi linkovi</h2>
-                    <ul>
-                        <li><a href="#">Početna</a></li>
-                        <li><a href="#">O nama</a></li>
-                        <li><a href="#">Proizvodi</a></li>
-                        <li><a href="#">Kontakt</a></li>
-                    </ul>
-                    <div class="socials">
-                        <h4>Pratite nas i na društvenim mrežama</h4>
-                        <a href="#"><i class="fab fa-facebook"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            &copy; 2024 E-Pharmacy. Sva prava zadržana.
-        </div>
-    </footer>    
-
-
-    <script src="js/main.js"></script>
+    <script src="{{url_for('static',filename='js/main.js')}}"></script>
 
 </body>
 

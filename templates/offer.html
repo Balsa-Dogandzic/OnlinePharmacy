@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ponuda</title>
+</head>
+
+<body>
+    {% for medicine in all_medicine %}
+    <p>{{medicine[1]}}</p>
+    <p>{{medicine[2]}}</p>
+    <p>{{medicine[3]|replace('\n', '<br>')|safe}}</p>
+    <p>{{medicine[4]}}</p>
+    <p>{{medicine[5]}}</p>
+    {% endfor %}
+</body>
+
+</html>
