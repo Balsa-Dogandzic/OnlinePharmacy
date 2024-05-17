@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 15, 2024 at 07:41 PM
+-- Generation Time: May 15, 2024 at 07:55 PM
 -- Server version: 10.4.22-MariaDB
 -- PHP Version: 8.1.2
 
@@ -126,6 +126,7 @@ ALTER TABLE `therapy`
 --
 ALTER TABLE `user`
   ADD PRIMARY KEY (`UMCN`),
+  ADD UNIQUE KEY `username` (`username`),
   ADD KEY `user_id` (`user_type`);
 
 --
