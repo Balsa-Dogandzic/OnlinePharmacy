@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Korpa proizvoda</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="Images/Icons/favicon.ico">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <script src="https://kit.fontawesome.com/3e58fdca93.js" crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+
+    <nav class="navbar">
+        <div class="logo">
+            <a href="index.html">
+                <img src="Images/logo.png" alt="Logo">
+            </a>
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html">Početna</a></li>
+            <li><a href="about.html">O nama</a></li>
+            <li class="dropdown">
+                <a href="#" class="dropbtn">Proizvodi</a>
+                <div class="dropdown-content">
+                    <a href="products.html?category=vitamini">Vitamini</a>
+                    <a href="products.html?category=ljekovi">Ljekovi</a>
+                    <a href="products.html?category=zaDjecu">Za djecu</a>
+                    <a href="products.html">Svi proizvodi</a>
+                </div>
+            </li>
+            <li><a href="contact.html">Kontakt</a></li>
+            <li><a href="logIn.html" class="always_active active">Log in</a></li>
+        </ul>
+        <div class="cart-icon">
+            <a href="user_cart.html">
+                <img src="Images/basket.png" alt="Cart">
+            </a>
+        </div>
+    </nav>
+
+
+    <div class="cont-under-navbar">
+        <p><a href="index.html">Početna</a> / Korpa proizvoda</p>
+    </div>
+
+    <!-- Tabela izabranih proizvoda -->
+
+
+    <div class="product-table-container">
+        <h1 style="text-align: center;">Korpa odabranih proizvoda</h1><br>
+        <table class="product-table">
+            <thead>
+                <tr>
+                    <th>Slika proizvoda</th>
+                    <th>Šifra proizvoda</th>
+                    <th>Naziv proizvoda</th>
+                    <th>Količina dostupnih proizvoda</th>
+                    <th>Broj odabranih proizvoda</th>
+                    <th>Ukloni</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><img src="Images/Products/1vitaminD.webp" alt="Proizvod 1"></td>
+                    <td class="mainNumberOfProduct">12345</td>
+                    <td class="nameOfProduct">Vitamin D</td>
+                    <td class="available-quantity">10</td>
+                    <td><div class="div-for-quantity"><button class="minusButton">-</button><input type="text" value="1" id="quantity-products" readonly><button class="plusButton">+</button></div></td>
+                    <td><button class="remove-btn">Ukloni</button></td>
+                </tr>
+                <tr>
+                    <td><img src="Images/Products/2vitaminA.webp" alt="Proizvod 2"></td>
+                    <td class="mainNumberOfProduct">67890</td>
+                    <td class="nameOfProduct">Vitamin A</td>
+                    <td class="available-quantity">5</td>
+                    <td><div class="div-for-quantity"><button class="minusButton">-</button><input type="text" value="1" id="quantity-products" readonly><button class="plusButton">+</button></div></td>
+                    <td><button class="remove-btn">Ukloni</button></td>
+                </tr>
+                <tr>
+                    <td><img src="Images/Products/4vitaminC.webp" alt="Proizvod 2"></td>
+                    <td class="mainNumberOfProduct">56274</td>
+                    <td class="nameOfProduct">Vitamin C</td>
+                    <td class="available-quantity">6</td>
+                    <td><div class="div-for-quantity"><button class="minusButton">-</button><input type="text" value="1" id="quantity-products" readonly><button class="plusButton">+</button></div></td>
+                    <td><button class="remove-btn">Ukloni</button></td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="cart">
+            <h3>Vaša korpa izabranih proizvoda:</h3>
+            <ul id="cart-list" class="cart-list">
+                <li>Naziv proizvoda: <span id="id-nameOfProduct">Proizvod 1</span></li>
+                <li>Sifra proizvoda: <span id="id-mainNumberOfProduct">12345</span></li>
+                <li>Količina proizvoda: <span id="id-quantityOfProduct">3</span></li>
+                <hr>
+                <li>Ukupna količina odabranih proizvoda: <span id="allProductsQuantity">10</span></li>
+            </ul>
+            <button id="submit-order" class="requestButton">Zatraži porudžbinu</button>
+        </div>
+    </div>
+
+
+    <footer class="footer">
+        <div class="container-for-footer">
+            <div class="footer-content">
+                <div class="footer-section about">
+                    <h2 class="logo"><a href="index.html">E-Pharmacy</a></h2>
+                    <p><b>E-Pharmacy</b> je online apoteka preko koje korisnici mogu napisati recept (porudžbinu) za
+                        ljekove koji su im potrebni.<br>Farmaceut može imati uvid u ove porudžbine i spremiti ih za
+                        pacijenta.</br></p>
+                    <div class="contact">
+                        <span><i class="fas fa-envelope"></i> <a href="mailto:e-pharmacy@outlook.com" class="link-fo">
+                                e-pharmacy@outlook.com</a></span>
+                    </div>
+                </div>
+                <div class="footer-section links">
+                    <h2>Brzi linkovi</h2>
+                    <ul>
+                        <li><a href="#">Početna</a></li>
+                        <li><a href="#">O nama</a></li>
+                        <li><a href="#">Proizvodi</a></li>
+                        <li><a href="#">Kontakt</a></li>
+                    </ul>
+                    <div class="socials">
+                        <h4>Pratite nas i na društvenim mrežama</h4>
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            &copy; 2024 E-Pharmacy. Sva prava zadržana.
+        </div>
+    </footer>
+
+
+    <script src="js/tableOfProducts.js"></script>
+    <script src="js/dropdown.js"></script>
+
+</body>
+
+</html>

@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>E-pharmacy</title>
+    <title>Korpa proizvoda</title>
 
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="Images/Icons/favicon.ico">
@@ -26,10 +26,10 @@
             </a>
         </div>
         <ul class="nav-links">
-            <li><a href="index.html" class="active">Početna</a></li>
+            <li><a href="index.html">Početna</a></li>
             <li><a href="about.html">O nama</a></li>
             <li class="dropdown">
-                <a href="#" class="dropbtn">Proizvodi</a>
+                <a href="#" class="dropbtn active">Proizvodi</a>
                 <div class="dropdown-content">
                     <a href="products.html?category=vitamini">Vitamini</a>
                     <a href="products.html?category=ljekovi">Ljekovi</a>
@@ -47,87 +47,52 @@
         </div>
     </nav>
 
-    <div class="big-container">
-        <div class="slider">
-            <div class="slides">
-                <div class="slide active" style="background-image: url('Images/slider1.jpg');">
-                    <div class="content">
-                        <h1>Zdravlje na prvom mjestu!</h1>
-                        <p>Pogledajte proizvode koje nudimo.</p><br>
-                        <a href="page1.html" class="button">Pogledajte proizvode</a>
-                    </div>
-                </div>
-                <div class="slide" style="background-image: url('Images/slider2.jpg');">
-                    <div class="content">
-                        <h1>Kvalitet za vašu dobrobit!</h1>
-                        <p>Otkrijte našu paletu proizvoda za zdraviji život.</p><br>
-                        <a href="page2.html" class="button">Pogledajte proizvode</a>
-                    </div>
-                </div>
-                <div class="slide" style="background-image: url('Images/slider3.jpg');">
-                    <div class="content">
-                        <h1>Briga o vašem zdravlju, naša prednost!</h1>
-                        <p>Inspirišite se našim proizvodima za svaki aspekt vašeg zdravlja.</p><br>
-                        <a href="page3.html" class="button">Pogledajte proizvode</a>
-                    </div>
-                </div>
-            </div>
-            <div class="arrows">
-                <div class="arrow left">&#10094;</div>
-                <div class="arrow right">&#10095;</div>
-            </div>
-        </div>
 
-        <div class="container">
-            <div class="half-below-slider">
-                <h1>Vitamini</h1>
-                <p>U asortimanu proizvoda posjetujemo veliki broj vitamina (A, B, C, D, E) za djecu i odrasle. </p>
-                <a href="#" class="button">Ponuda vitamina</a>
-            </div>
-            <div class="half-below-slider">
-                <h1>Ljekovi</h1>
-                <p>Paragraf 1</p>
-                <a href="#" class="button">Ponuda ljekova</a>
-            </div>
-            <div class="half-below-slider">
-                <h1>Za djecu</h1>
-                <p>Paragraf 1</p>
-                <a href="#" class="button">Ponuda za djecu</a>
-            </div>
-        </div>
+    <div class="cont-under-navbar">
+        <p><a href="index.html">Početna</a> / Naši proizvodi</p>
     </div>
 
-    <section class="section-of-products" id="section-of-products">
-        <h1>Naš asortiman proizvoda</h1>
+    <!-- Tabela proizvoda -->
+
+    <section class="section-of-products" id="section-of-products" style="margin-top: 3%;">
+        <h1 style="margin-bottom: 2%;">Naš asortiman proizvoda</h1>
+        <hr style="width: 20%;">
+        <h3 style="text-align: center;">Filter pretraga</h3>
+        <div id="filters">
+            <button class="filter-button" onclick="filterProducts('vitamini')">Vitamini</button>
+            <button class="filter-button" onclick="filterProducts('ljekovi')">Ljekovi</button>
+            <button class="filter-button" onclick="filterProducts('zaDjecu')">Za djecu</button>
+            <button class="filter-button" onclick="resetFilter()">Svi proizvodi</button>
+        </div>
         <div class="products">
-            <div class="product">
+            <div class="product" data-category="vitamini">
                 <img src="Images/Products/1vitaminD.webp">
                 <h2>Vitamin D</h2>
                 <p>Namijenjen za djecu i odrasle.</p>
             </div>
-            <div class="product">
+            <div class="product" data-category="vitamini">
                 <img src="Images/Products/2vitaminA.webp">
                 <h2>Vitamin A</h2>
                 <p>Namijenjen za djecu i odrasle.</p>
             </div>
-            <div class="product">
+            <div class="product" data-category="vitamini">
                 <img src="Images/Products/3vitaminB.png">
                 <h2>Vitamin B</h2>
                 <p>Namijenjen za djecu i odrasle.</p>
             </div>
         </div>
         <div class="products">
-            <div class="product">
+            <div class="product" data-category="vitamini">
                 <img src="Images/Products/4vitaminC.webp">
                 <h2>Vitamin C</h2>
                 <p>Namijenjen za djecu i odrasle.</p>
             </div>
-            <div class="product">
+            <div class="product" data-category="vitamini">
                 <img src="Images/Products/5vitaminE.png">
                 <h2>Vitamin E</h2>
                 <p>Namijenjen za djecu i odrasle.</p>
             </div>
-            <div class="product">
+            <div class="product" data-category="zaDjecu">
                 <img src="Images/Products/6zaDjecu.webp">
                 <h2>Sirup Motrin</h2>
                 <p>Namijenjen isključivo za djecu do 9 godina.</p>
@@ -135,9 +100,7 @@
         </div>
     </section>
 
-    <div class="show_all_products">
-        <a href="products.html" class="button">Pogledajte sve proizvode</a>
-    </div>
+
 
 
     <footer class="footer">
@@ -176,7 +139,7 @@
     </footer>
 
 
-    <script src="js/main.js"></script>
+    <script src="js/pageProducts.js"></script>
     <script src="js/dropdown.js"></script>
 
 </body>

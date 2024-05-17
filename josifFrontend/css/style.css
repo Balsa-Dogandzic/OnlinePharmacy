@@ -412,3 +412,153 @@ body {
     color: #007bff;
 }
 
+/* user_cart.html */
+
+.cont-under-navbar {
+    width: 100%;
+    background-color: rgba(185, 185, 185, 0.747);
+    display: flex;
+    align-items: center;
+}
+
+.cont-under-navbar p {
+    margin-left: 10%;
+    color: black;
+}
+
+.cont-under-navbar p a {
+    text-decoration: none;
+}
+
+.cont-under-navbar p a {
+    color: #007bff;
+}
+
+.cont-under-navbar p a:hover {
+    color: #0056b3;
+}
+
+/* tabela proizvoda */
+
+.product-table-container {
+    margin: 3% auto 5% auto;
+    width: 90%;
+    max-width: 1200px;
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    
+}
+
+.product-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.product-table th,
+.product-table td {
+    padding: 12px 15px;
+    text-align: center;
+}
+
+.product-table th {
+    background-color: #f2f2f2;
+    border-bottom: 2px solid #ddd;
+}
+
+.product-table td {
+    border-bottom: 1px solid #ddd;
+}
+
+.product-table img {
+    max-width: 100px;
+    border-radius: 4px;
+}
+
+.remove-btn, .requestButton {
+    background-color: #ff4d4d;
+    color: #fff;
+    border: none;
+    padding: 8px 12px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.requestButton {
+    background-color: #007bff;
+}
+
+.requestButton:hover {
+    background-color: #0057b3bb;
+}
+
+.remove-btn:hover {
+    background-color: #ff1a1a;
+}
+
+tr td input {
+    width: 10%;
+    text-align: center;
+    height: 25px;
+    padding: 0;
+    margin: 0 10px 0 10px;
+}
+
+.div-for-quantity button {
+    height: 29px;
+    width: 10%;
+    background-color: #007bff65;
+    border: 1px solid;
+    border-color: #0057b3c5;
+    border-radius: 5px;
+}
+
+.div-for-quantity button:hover {
+    background-color: #248cfa;
+    cursor: pointer;
+}
+
+.cart {
+    margin-top: 20px;
+}
+.cart-list {
+    list-style-type: none;
+    padding: 0;
+}
+.cart-list li {
+    margin-bottom: 5px;
+}
+
+.cart-list li span {
+    font-weight: bold;
+    color: #248cfa;
+}
+
+/* Stranica "proizvodi" */
+
+/* filter pretraga */
+
+.filter-button {
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
+.filter-button:hover {
+    background-color: #0551a3;
+}
+
+#filters {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 5%;
+}
