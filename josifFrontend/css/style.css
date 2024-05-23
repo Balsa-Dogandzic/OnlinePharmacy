@@ -562,3 +562,195 @@ tr td input {
     justify-content: center;
     margin-bottom: 5%;
 }
+
+/* Kontakt forma */
+
+.contact-form-container {
+    background: #fff;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 60%;
+    margin-top: 100px;
+}
+
+.main-div-for-contact {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.contact-form h2 {
+    margin-bottom: 1rem;
+    color: #333;
+}
+
+.contact-form label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: #666;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 80%;
+    padding: 0.75rem;
+    margin-bottom: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+.contact-form button {
+    width: 20%;
+    padding: 0.75rem;
+    background: #007bff;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.contact-form button:hover {
+    background: #0056b3;
+}
+
+
+/* Log in / register sstranica */
+
+.container-for-logIn {
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    width: 350px;
+}
+
+.toggle-buttons {
+    display: flex;
+}
+
+.toggle-buttons button {
+    flex: 1;
+    padding: 15px;
+    border: none;
+    cursor: pointer;
+    background: #007bff;
+    color: white;
+    transition: background 0.3s;
+}
+
+.toggle-buttons button:hover {
+    background: #0056b3;
+}
+
+.form-container {
+    padding: 20px;
+    position: relative;
+}
+
+.loginForm {
+    display: none;
+    flex-direction: column;
+}
+
+.loginForm h2 {
+    margin-bottom: 20px;
+}
+
+.loginForm input {
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.loginForm button {
+    padding: 10px;
+    border: none;
+    background: #007bff;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.loginForm button:hover {
+    background: #0056b3;
+}
+
+#login-form.active, #register-form.active {
+    display: flex;
+}
+
+.div-center-forms {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 100px;
+}
+
+/* About stranica */
+
+.about-us {
+    padding: 2rem 1rem;
+    background-color: rgba(51, 51, 51, 0.829);
+}
+
+.container-for-about {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.image, .content {
+    flex: 1 1 45%;
+}
+
+.image img {
+    width: 100%;
+    border-radius: 8px;
+}
+
+.content h2 {
+    color: #6c63ff;
+    margin-bottom: 1rem;
+    font-size: 1.8rem;
+}
+
+.content p {
+    margin-bottom: 1.5rem;
+    text-align: justify;
+}
+
+
+/* Products.html - checkbox buttons */
+
+.div-for-checkbox {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+}
+
+.div-for-checkbox label {
+    margin-right: 5px;
+    font-size: x-small;
+}
+
+.div-for-checkbox input {
+    height: 25px;
+    width: 25px;
+}
+
+.button-finalProducts {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    margin-bottom: 50px;
+}

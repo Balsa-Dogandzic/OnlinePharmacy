@@ -28,15 +28,7 @@
         <ul class="nav-links">
             <li><a href="index.html">Početna</a></li>
             <li><a href="about.html">O nama</a></li>
-            <li class="dropdown">
-                <a href="#" class="dropbtn active">Proizvodi</a>
-                <div class="dropdown-content">
-                    <a href="products.html?category=vitamini">Vitamini</a>
-                    <a href="products.html?category=ljekovi">Ljekovi</a>
-                    <a href="products.html?category=zaDjecu">Za djecu</a>
-                    <a href="products.html">Svi proizvodi</a>
-                </div>
-            </li>
+            <li><a href="products.html" class="active">Proizvodi</a></li>
             <li><a href="contact.html">Kontakt</a></li>
             <li><a href="logIn.html" class="always_active">Log in</a></li>
         </ul>
@@ -69,16 +61,28 @@
                 <img src="Images/Products/1vitaminD.webp">
                 <h2>Vitamin D</h2>
                 <p>Namijenjen za djecu i odrasle.</p>
+                <div class="div-for-checkbox">
+                    <label for="">Zelim ovaj proizvod</label>
+                    <input type="checkbox" name="">
+                </div>
             </div>
             <div class="product" data-category="vitamini">
                 <img src="Images/Products/2vitaminA.webp">
                 <h2>Vitamin A</h2>
                 <p>Namijenjen za djecu i odrasle.</p>
+                <div class="div-for-checkbox">
+                    <label for="">Zelim ovaj proizvod</label>
+                    <input type="checkbox" name="">
+                </div>
             </div>
             <div class="product" data-category="vitamini">
                 <img src="Images/Products/3vitaminB.png">
                 <h2>Vitamin B</h2>
                 <p>Namijenjen za djecu i odrasle.</p>
+                <div class="div-for-checkbox">
+                    <label for="">Zelim ovaj proizvod</label>
+                    <input type="checkbox" name="">
+                </div>
             </div>
         </div>
         <div class="products">
@@ -86,19 +90,35 @@
                 <img src="Images/Products/4vitaminC.webp">
                 <h2>Vitamin C</h2>
                 <p>Namijenjen za djecu i odrasle.</p>
+                <div class="div-for-checkbox">
+                    <label for="">Zelim ovaj proizvod</label>
+                    <input type="checkbox" name="">
+                </div>
             </div>
             <div class="product" data-category="vitamini">
                 <img src="Images/Products/5vitaminE.png">
                 <h2>Vitamin E</h2>
                 <p>Namijenjen za djecu i odrasle.</p>
+                <div class="div-for-checkbox">
+                    <label for="">Zelim ovaj proizvod</label>
+                    <input type="checkbox" name="">
+                </div>
             </div>
             <div class="product" data-category="zaDjecu">
                 <img src="Images/Products/6zaDjecu.webp">
                 <h2>Sirup Motrin</h2>
                 <p>Namijenjen isključivo za djecu do 9 godina.</p>
+                <div class="div-for-checkbox">
+                    <label for="">Zelim ovaj proizvod</label>
+                    <input type="checkbox" name="">
+                </div>
             </div>
         </div>
-    </section>
+    </section><br>
+
+    <div class="button-finalProducts">
+        <button class="button">Dodajte u korpu</button>
+    </div>
 
 
 
@@ -140,7 +160,6 @@
 
 
     <script src="js/pageProducts.js"></script>
-    <script src="js/dropdown.js"></script>
 
 </body>
 

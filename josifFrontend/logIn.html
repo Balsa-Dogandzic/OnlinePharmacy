@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>E-pharmacy</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="Images/Icons/favicon.ico">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <script src="https://kit.fontawesome.com/3e58fdca93.js" crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+
+    <nav class="navbar">
+        <div class="logo">
+            <a href="index.html">
+                <img src="Images/logo.png" alt="Logo">
+            </a>
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html">Početna</a></li>
+            <li><a href="about.html">O nama</a></li>
+            <li><a href="products.html">Proizvodi</a></li>
+            <li><a href="contact.html">Kontakt</a></li>
+            <li><a href="logIn.html" class="always_active">Log in</a></li>
+        </ul>
+        <div class="cart-icon">
+            <a href="user_cart.html">
+                <img src="Images/basket.png" alt="Cart">
+            </a>
+        </div>
+    </nav>
+
+    <div class="cont-under-navbar">
+        <p><a href="index.html">Početna</a> / Log in</p>
+    </div>
+
+
+    <h1 style="text-align: center; margin-top: 40px;">Prijavite se ili se registrujte</h1>
+
+    <div class="div-center-forms">
+        <div class="container-for-logIn">
+            <div class="toggle-buttons">
+                <button id="login-btn" onclick="showLoginForm()">Prijava</button>
+                <button id="register-btn" onclick="showRegisterForm()">Registracija</button>
+            </div>
+            <div class="form-container">
+                <form id="login-form" class="loginForm">
+                    <h2>Prijavite se</h2>
+                    <input type="text" placeholder="Korisnicko ime" required>
+                    <input type="password" placeholder="Lozinka" required>
+                    <button type="submit">Prijavite se</button>
+                </form>
+                <form id="register-form" class="loginForm">
+                    <h2>Registrujte se</h2>
+                    <input type="text" placeholder="Korisnicko ime" required>
+                    <input type="email" placeholder="E-mail adresa" required>
+                    <input type="password" placeholder="Lozinka" required>
+                    <button type="submit">Registrujte se</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="js/logIn.js"></script>
+
+</body>
+
+</html>
