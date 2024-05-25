@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>E-pharmacy</title>
+
+    <link rel="icon" type="image/x-icon" href="{{url_for('static', filename='Images/Icons/favicon.ico')}}">
+
+    <link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}">
+
+    <script src="https://kit.fontawesome.com/3e58fdca93.js" crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+
+    {% include 'components/nav.html' %}
+
+    <div class="cont-under-navbar">
+        <p><a href="/">Početna</a> / Kontakt</p>
+    </div>
+
+
+    <div class="main-div-for-contact">
+        <div class="contact-form-container">
+            <form class="contact-form">
+                <h2>Kontaktirajte nas</h2>
+                <label for="name">Ime i prezime</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="email">E-mail adresa</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="message">Poruka</label>
+                <textarea id="message" name="message" rows="4" required></textarea>
+
+                <button type="submit">Pošalji</button>
+            </form>
+        </div>
+    </div>
+
+    {% include 'components/footer.html' %}
+
+</body>
+
+</html>

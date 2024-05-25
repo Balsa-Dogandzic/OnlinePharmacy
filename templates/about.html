@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>E-pharmacy</title>
+
+    <link rel="icon" type="image/x-icon" href="{{url_for('static', filename='Images/Icons/favicon.ico')}}">
+
+    <link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}">
+
+    <script src="https://kit.fontawesome.com/3e58fdca93.js" crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+
+    {% include 'components/nav.html' %}
+
+    <div class="cont-under-navbar">
+        <p><a href="/">Početna</a> / O nama</p>
+    </div>
+
+
+    <section class="about-us">
+        <div class="container-for-about">
+            <div class="image">
+                <img src="{{url_for('static', filename='Images/logo.png')}}" alt="Logo">
+            </div>
+            <div class="content" style="margin-left: 70px;">
+                <h2>Naša priča</h2>
+                <p>Mi smo mlada i dinamična kompanija koja se bavi inovativnim rješenjima u tehnologiji. Naš tim
+                    stručnjaka radi predano na razvoju proizvoda koji mijenjaju način na koji ljudi koriste tehnologiju.
+                    Naša misija je da kreiramo proizvode koji su jednostavni za korištenje, pouzdani i pristupačni
+                    svima.</p>
+                <h2>Naše vrijednosti</h2>
+                <p>Posvećenost, integritet i inovacija su temeljne vrijednosti koje nas vode u svakodnevnom radu.
+                    Vjerujemo u transparentnu komunikaciju sa našim klijentima i stalno težimo poboljšanju naših usluga.
+                </p>
+                <h2>Naš tim</h2>
+                <p>Naš tim se sastoji od talentiranih profesionalaca sa različitim pozadinama i vještinama. Zajedno
+                    radimo na postizanju zajedničkog cilja - zadovoljstva naših korisnika i uspjeha kompanije.</p>
+            </div>
+        </div>
+    </section>
+
+    {% include 'components/footer.html' %}
+
+</body>
+
+</html>

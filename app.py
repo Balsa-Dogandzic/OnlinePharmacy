@@ -1,28 +1,24 @@
 from flask import Flask, render_template
-from flask_mysqldb import MySQL
+from medicine import medicine_bp
+from authentification import auth_bp
 
 app = Flask(__name__)
+app.register_blueprint(medicine_bp)
+app.register_blueprint(auth_bp)
 
 app.secret_key = "112848d5a2f0f83e8386629bd5d427a1"
-
-app.config['MYSQL_HOST'] = 'localhost'
-app.config['MYSQL_USER'] = 'root'
-app.config['MYSQL_PASSWORD'] = ''
-app.config['MYSQL_DB'] = 'pharmacy'
-
-db = MySQL(app)
 
 @app.route("/")
 def index():
     return render_template("index.html")
 
-@app.route("/offer")
-def offer():
-    cursor = db.connection.cursor()
-    cursor.execute("SELECT * FROM medicine;")
-    all_medicine = cursor.fetchall()
-    cursor.close()
-    return render_template("offer.html", all_medicine=all_medicine)
+@app.route("/o_nama/")
+def about():
+    return render_template("about.html")
+
+@app.route("/kontakt/")
+def contact():
+    return render_template("contact.html")
 
 if __name__ == "__main__":
     app.run(debug=True)
