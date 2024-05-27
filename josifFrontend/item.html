@@ -22,8 +22,8 @@
         <ul class="nav-links">
             <li><a href="index.html">Početna</a></li>
             <li><a href="about.html">O nama</a></li>
-            <li><a href="products.html">Proizvodi</a></li>
-            <li><a href="contact.html" class="active">Kontakt</a></li>
+            <li><a href="products.html" class="active">Proizvodi</a></li>
+            <li><a href="contact.html">Kontakt</a></li>
             <li><a href="logIn.html" class="always_active">Log in</a></li>
         </ul>
         <div class="cart-icon">
@@ -34,27 +34,40 @@
     </nav>
 
     <div class="cont-under-navbar">
-        <p><a href="index.html">Početna</a> / Kontakt</p>
+        <p><a href="index.html">Početna</a> / Proizvod</p>
     </div>
 
 
-    <div class="main-div-for-contact">
-        <div class="contact-form-container">
-            <form class="contact-form">
-                <h2>Kontaktirajte nas</h2>
-                <label for="name">Ime i prezime</label>
-                <input type="text" id="name" name="name" required>
+    <!-- Content -->
 
-                <label for="email">E-mail adresa</label>
-                <input type="email" id="email" name="email" required>
-
-                <label for="message">Poruka</label>
-                <textarea id="message" name="message" rows="4" required></textarea>
-
-                <button type="submit">Pošalji</button>
-            </form>
+    <div class="mainDiv-for-Item">
+        <div class="container-for-item">
+            <div class="header-item">
+                <h1>Informacije o lijeku</h1>
+            </div>
+            <div class="medicine-info">
+                <div class="medicine-image">
+                    <img src="Images/Products/1vitaminD.webp" alt="Slika lijeka">
+                </div>
+                <div class="medicine-details">
+                    <h2>Naziv lijeka</h2>
+                    <p><strong>Sastav:</strong> Aktivni sastojak 1, Aktivni sastojak 2</p>
+                    <p><strong>Doza:</strong> 10 mg</p>
+                    <p><strong>Opis:</strong> Ovaj lijek se koristi za tretman različitih stanja...</p>
+                </div>
+            </div>
+            <div class="prescription-select">
+                <label for="prescription">Dodaj na recept:</label>
+                <select id="prescription" name="prescription">
+                    <option value="recept1">Recept 1</option>
+                    <option value="recept2">Recept 2</option>
+                    <option value="recept3">Recept 3</option>
+                </select>
+            </div>
         </div>
     </div>
+
+
 
 
     <footer class="footer">
@@ -91,8 +104,6 @@
             &copy; 2024 E-Pharmacy. Sva prava zadržana.
         </div>
     </footer>
-
-
 
 </body>
 
