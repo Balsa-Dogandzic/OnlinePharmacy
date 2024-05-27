@@ -8,9 +8,17 @@
         <li><a href="/" class="active">Pocetna</a></li>
         <li><a href="/o_nama/">O nama</a></li>
         <li><a href="/ljekovi/">Ponuda</a></li>
+        {% if session.get('user_type') == 1 %}
         <li><a href="/recepti/">Recepti</a></li>
+        {% elif session.get('user_type') == 2 %}
+        <li><a href="/ljekovi/dodaj/">Dodaj lijek</a></li>
+        {% endif %}
         <li><a href="/kontakt/">Kontakt</a></li>
+        {% if session.get('user') %}
+        <li><a href="/logout/" class="always_active">Log out</a></li>
+        {% else %}
         <li><a href="/login/" class="always_active">Log in</a></li>
+        {% endif %}
     </ul>
 
 </nav>

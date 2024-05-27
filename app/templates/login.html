@@ -33,17 +33,23 @@
                 <button id="register-btn" onclick="showRegisterForm()">Registracija</button>
             </div>
             <div class="form-container">
-                <form id="login-form" class="loginForm">
+                <form id="login-form" class="loginForm" action="/login/" method="post">
                     <h2>Prijavite se</h2>
-                    <input type="text" placeholder="Korisnicko ime" required>
-                    <input type="password" placeholder="Lozinka" required>
+                    <span style="color: red;">{{login_message}}</span>
+                    <input type="text" placeholder="Korisnicko ime" name="login_username" required>
+                    <input type="password" placeholder="Lozinka" name="login_password" required>
                     <button type="submit">Prijavite se</button>
                 </form>
-                <form id="register-form" class="loginForm">
+                <form id="register-form" class="loginForm" action="/register/" method="post">
                     <h2>Registrujte se</h2>
-                    <input type="text" placeholder="Korisnicko ime" required>
-                    <input type="email" placeholder="E-mail adresa" required>
-                    <input type="password" placeholder="Lozinka" required>
+                    <span style="color: red;">{{register_message}}</span>
+                    <input type="text" placeholder="JMBG" name="UMCN" required>
+                    <input type="text" placeholder="Ime" name="name" required>
+                    <input type="text" placeholder="Prezime" name="surname" required>
+                    <input type="text" placeholder="Korisnicko ime" name="register_username" required>
+                    <input type="tel" placeholder="Telefon" name="phone" required>
+                    <input type="password" placeholder="Lozinka" name="register_password" required>
+                    <input type="password" placeholder="Ponovi lozinku" name="register_password2" required>
                     <button type="submit">Registrujte se</button>
                 </form>
             </div>

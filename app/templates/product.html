@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Kontakt</title>
+
+    <link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}">
+
+</head>
+
+<body>
+
+    {% include 'components/nav.html' %}
+
+    <div class="cont-under-navbar">
+        <p><a href="/">Početna</a> / Proizvod</p>
+    </div>
+
+    <div class="mainDiv-for-Item">
+        <div class="container-for-item">
+            <div class="header-item">
+                <h1>Informacije o lijeku</h1>
+            </div>
+            <div class="medicine-info">
+                <div class="medicine-image">
+                    <img src="{{url_for('static', filename='Images/Products/1vitaminD.webp')}}" alt="Slika lijeka">
+                </div>
+                <div class="medicine-details">
+                    <h2>Naziv lijeka</h2>
+                    <p><strong>Sastav:</strong> Aktivni sastojak 1, Aktivni sastojak 2</p>
+                    <p><strong>Doza:</strong> 10 mg</p>
+                </div>
+            </div>
+            <div class="prescription-select">
+                <label for="prescription">Dodaj na recept:</label>
+                <form action="">
+                    <select id="prescription" name="prescription">
+                        <option value="recept1">Recept 1</option>
+                        <option value="recept2">Recept 2</option>
+                        <option value="recept3">Recept 3</option>
+                    </select>
+                    <input type="submit" value="Dodaj" class="prescription-btn">
+                </form>
+            </div>
+            <div class="description">
+                <h3>Opis:</h3>
+                <p>Opis lijeka</p>
+            </div>
+        </div>
+    </div>
+
+    {% include 'components/footer.html' %}
+
+</body>
+
+</html>

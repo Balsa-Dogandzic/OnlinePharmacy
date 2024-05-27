@@ -189,7 +189,7 @@ body {
 
 .half-below-slider p {
   font-size: 15px;
-  margin-bottom: 30px;
+  margin: 30px 10px 30px 10px;
 }
 
 .container {
@@ -574,7 +574,8 @@ tr td input {
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   width: 60%;
-  margin: 100px 0;
+  margin-top: 100px;
+  margin-bottom: 100px;
 }
 
 .main-div-for-contact {
@@ -692,7 +693,8 @@ tr td input {
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 70vh;
+  margin-top: 100px;
+  margin-bottom: 100px;
 }
 
 /* About stranica */
@@ -729,7 +731,7 @@ tr td input {
 
 .content p {
   margin-bottom: 1.5rem;
-  text-align: justify;
+  text-align: center;
 }
 
 /* Products.html - checkbox buttons */
@@ -748,6 +750,7 @@ tr td input {
 .div-for-checkbox input {
   height: 25px;
   width: 25px;
+  cursor: pointer;
 }
 
 .button-finalProducts {
@@ -756,4 +759,89 @@ tr td input {
   align-items: center;
   margin-top: 20px;
   margin-bottom: 50px;
+}
+
+/* Item.html */
+
+.container-for-item {
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  max-width: 600px;
+  width: 100%;
+}
+
+.header-item {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.medicine-info {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.medicine-image img {
+  border-radius: 10px;
+  width: 150px;
+  height: auto;
+  margin-right: 20px;
+}
+
+.medicine-details {
+  flex: 1;
+}
+
+.medicine-details h2 {
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.medicine-details p {
+  margin-bottom: 5px;
+  color: #555;
+}
+
+.prescription-select {
+  text-align: center;
+}
+
+.prescription-select label {
+  display: block;
+  margin-bottom: 10px;
+  font-weight: bold;
+  color: #333;
+}
+
+.prescription-select select {
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+  width: 100%;
+}
+
+.prescription-btn {
+  margin: 1rem;
+  padding: 0.5rem 1rem;
+  border: none;
+  font-size: 1rem;
+  color: #f2f2f2;
+  background-color: #0056b3;
+  cursor: pointer;
+}
+
+.mainDiv-for-Item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+
+.description h3,
+.description p {
+  color: #333;
 }
