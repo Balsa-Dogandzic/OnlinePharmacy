@@ -7,3 +7,5 @@ class Config:
     MYSQL_PASSWORD = ''
     MYSQL_DB = 'pharmacy'
     MYSQL_CURSORCLASS = 'DictCursor'
+    UPLOAD_FOLDER = "app/uploads"
+    MAX_CONTENT_LENGTH = 16 * 1024 * 1024
