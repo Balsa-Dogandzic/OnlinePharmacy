@@ -10,7 +10,10 @@ def uploads(filename):
 
 @bp.route("/")
 def index():
-    return render_template("index.html")
+    cursor = mysql.connection.cursor()
+    cursor.execute(f"SELECT * FROM medicine LIMIT 3")
+    products = cursor.fetchall()
+    return render_template("index.html", products=products)
 
 @bp.route("/o_nama/")
 def about():

@@ -5,9 +5,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Kontakt</title>
+    <title>{{medicine.name}}</title>
+
+    <link rel="icon" type="image/x-icon" href="{{url_for('static', filename='Images/Icons/favicon.ico')}}">
 
     <link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}">
+
+    <script src="https://kit.fontawesome.com/3e58fdca93.js" crossorigin="anonymous"></script>
 
 </head>
 
@@ -26,28 +30,29 @@
             </div>
             <div class="medicine-info">
                 <div class="medicine-image">
-                    <img src="{{url_for('static', filename='Images/Products/1vitaminD.webp')}}" alt="Slika lijeka">
+                    <img src="/uploads/{{medicine.image}}" alt="{{medicine.name}}">
                 </div>
                 <div class="medicine-details">
-                    <h2>Naziv lijeka</h2>
-                    <p><strong>Sastav:</strong> Aktivni sastojak 1, Aktivni sastojak 2</p>
-                    <p><strong>Doza:</strong> 10 mg</p>
+                    <h2>{{medicine.name}}</h2>
+                    <p><strong>Dejstvo:</strong> {{medicine.effect}}</p>
+                    <p><strong>Doza:</strong> {{medicine.dose}} mg</p>
+                    <p><strong>Cijena:</strong> {{medicine.price}} €</p>
                 </div>
             </div>
             <div class="prescription-select">
                 <label for="prescription">Dodaj na recept:</label>
                 <form action="">
                     <select id="prescription" name="prescription">
-                        <option value="recept1">Recept 1</option>
-                        <option value="recept2">Recept 2</option>
-                        <option value="recept3">Recept 3</option>
+                        {% for prescription in prescriptions %}
+                        <option value="{{prescription.id}}">{{prescription.name}}</option>
+                        {% endfor %}
                     </select>
                     <input type="submit" value="Dodaj" class="prescription-btn">
                 </form>
             </div>
             <div class="description">
                 <h3>Opis:</h3>
-                <p>Opis lijeka</p>
+                <p>{{medicine.description|safe}}</p>
             </div>
         </div>
     </div>

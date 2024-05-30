@@ -5,7 +5,7 @@ from app import mysql
 @bp.route('/ljekovi/')
 def all_medicine():
     cursor = mysql.connection.cursor()
-    cursor.execute(f"SELECT * FROM medicine")
+    cursor.execute(f"SELECT * FROM medicine ORDER BY name")
     all_medicine = cursor.fetchall()
     return render_template("products.html", all_medicine=all_medicine)
 
@@ -31,5 +31,8 @@ def add_medicine():
 
 
 @bp.route('/recepti/')
-def receipts():
-    return render_template("receipts.html")
+def prescriptions():
+    cursor = mysql.connection.cursor()
+    cursor.execute(f"SELECT * FROM prescription WHERE user_id={session.get('user')}")
+    prescriptions = cursor.fetchall()
+    return render_template("prescriptions.html", prescriptions=prescriptions)

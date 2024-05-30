@@ -28,13 +28,19 @@
 
     <div class="product-table-container">
         <h1 style="text-align: center;">Korpa odabranih proizvoda</h1><br>
+        <form action="" method="post">
+            <select name="" id="">
+                {% for prescription in prescriptions %}
+                <option value="{{prescription.id}}">{{prescription.name}}</option>
+                {% endfor %}
+            </select>
+            <button type="submit" class="button">Izaberi</button>
+        </form>
         <table class="product-table">
             <thead>
                 <tr>
                     <th>Slika proizvoda</th>
-                    <th>Šifra proizvoda</th>
                     <th>Naziv proizvoda</th>
-                    <th>Količina dostupnih proizvoda</th>
                     <th>Broj odabranih proizvoda</th>
                     <th>Ukloni</th>
                 </tr>
@@ -43,9 +49,7 @@
                 <tr>
                     <td><img src="{{url_for('static', filename='Images/Products/1vitaminD.webp')}}" alt="Proizvod 1">
                     </td>
-                    <td class="mainNumberOfProduct">12345</td>
                     <td class="nameOfProduct">Vitamin D</td>
-                    <td class="available-quantity">10</td>
                     <td>
                         <div class="div-for-quantity"><button class="minusButton">-</button><input type="text" value="1"
                                 id="quantity-products" readonly><button class="plusButton">+</button></div>
@@ -55,9 +59,7 @@
                 <tr>
                     <td><img src="{{url_for('static', filename='Images/Products/2vitaminA.webp')}}" alt="Proizvod 2">
                     </td>
-                    <td class="mainNumberOfProduct">67890</td>
                     <td class="nameOfProduct">Vitamin A</td>
-                    <td class="available-quantity">5</td>
                     <td>
                         <div class="div-for-quantity"><button class="minusButton">-</button><input type="text" value="1"
                                 id="quantity-products" readonly><button class="plusButton">+</button></div>
@@ -67,9 +69,7 @@
                 <tr>
                     <td><img src="{{url_for('static', filename='Images/Products/4vitaminC.webp')}}" alt="Proizvod 2">
                     </td>
-                    <td class="mainNumberOfProduct">56274</td>
                     <td class="nameOfProduct">Vitamin C</td>
-                    <td class="available-quantity">6</td>
                     <td>
                         <div class="div-for-quantity"><button class="minusButton">-</button><input type="text" value="1"
                                 id="quantity-products" readonly><button class="plusButton">+</button></div>
@@ -78,17 +78,6 @@
                 </tr>
             </tbody>
         </table>
-        <div class="cart">
-            <h3>Vaša korpa izabranih proizvoda:</h3>
-            <ul id="cart-list" class="cart-list">
-                <li>Naziv proizvoda: <span id="id-nameOfProduct">Proizvod 1</span></li>
-                <li>Sifra proizvoda: <span id="id-mainNumberOfProduct">12345</span></li>
-                <li>Količina proizvoda: <span id="id-quantityOfProduct">3</span></li>
-                <hr>
-                <li>Ukupna količina odabranih proizvoda: <span id="allProductsQuantity">10</span></li>
-            </ul>
-            <button id="submit-order" class="requestButton">Zatraži porudžbinu</button>
-        </div>
     </div>
 
     {% include 'components/footer.html' %}

@@ -75,38 +75,13 @@
     <section class="section-of-products" id="section-of-products">
         <h1>Naš asortiman proizvoda</h1>
         <div class="products">
+            {% for product in products %}
             <div class="product">
-                <img src="{{url_for('static',filename='Images/Products/1vitaminD.webp')}}">
-                <h2>Vitamin D</h2>
+                <img src="/uploads/{{product.image}}">
+                <h2>{{product.name}}</h2>
                 <p>Namijenjen za djecu i odrasle.</p>
             </div>
-            <div class="product">
-                <img src="{{url_for('static',filename='Images/Products/2vitaminA.webp')}}">
-                <h2>Vitamin A</h2>
-                <p>Namijenjen za djecu i odrasle.</p>
-            </div>
-            <div class="product">
-                <img src="{{url_for('static',filename='Images/Products/3vitaminB.png')}}">
-                <h2>Vitamin B</h2>
-                <p>Namijenjen za djecu i odrasle.</p>
-            </div>
-        </div>
-        <div class="products">
-            <div class="product">
-                <img src="{{url_for('static',filename='Images/Products/4vitaminC.webp')}}">
-                <h2>Vitamin C</h2>
-                <p>Namijenjen za djecu i odrasle.</p>
-            </div>
-            <div class="product">
-                <img src="{{url_for('static',filename='Images/Products/5vitaminE.png')}}">
-                <h2>Vitamin E</h2>
-                <p>Namijenjen za djecu i odrasle.</p>
-            </div>
-            <div class="product">
-                <img src="{{url_for('static',filename='Images/Products/6zaDjecu.webp')}}">
-                <h2>Sirup Motrin</h2>
-                <p>Namijenjen isključivo za djecu do 9 godina.</p>
-            </div>
+            {% endfor %}
         </div>
     </section>
 
