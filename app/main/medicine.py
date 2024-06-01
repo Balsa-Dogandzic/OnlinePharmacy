@@ -61,8 +61,7 @@ def prescriptions():
     if prescription:
         cursor.execute(f"SELECT therapy.*, medicine.name, medicine.image FROM medicine JOIN therapy ON therapy.medicine_id = medicine.id WHERE prescription_id={prescription}")
         therapy = cursor.fetchall()
-        prescription_id  = therapy[0].get('prescription_id')
-        return render_template("prescriptions.html", prescriptions=prescriptions, therapy=therapy, id=prescription_id)
+        return render_template("prescriptions.html", prescriptions=prescriptions, therapy=therapy, id=prescription)
     return render_template("prescriptions.html", prescriptions=prescriptions)
 
 
