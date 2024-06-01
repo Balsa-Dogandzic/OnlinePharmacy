@@ -19,6 +19,24 @@
 
     {% include 'components/nav.html' %}
 
+    <div class="add-prescription" id="openModal"><i class="fa-solid fa-plus"></i></div>
+
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Dodaj recept</h2>
+                <span class="close">&times;</span>
+            </div>
+            <div class="modal-body">
+                <form id="modalForm" action="/recepti/dodaj/" method="post">
+                    <label for="textInput">Nazovi svoj recept:</label>
+                    <input type="text" id="textInput" name="prescription" required>
+                    <button type="submit" class="button">Dodaj</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
     <div class="cont-under-navbar">
         <p><a href="/">Početna</a> / Korpa proizvoda</p>
     </div>
@@ -27,9 +45,10 @@
 
 
     <div class="product-table-container">
-        <h1 style="text-align: center;">Korpa odabranih proizvoda</h1><br>
-        <form action="" method="post">
-            <select name="" id="">
+        <h1 style="text-align: center;">Recepti</h1><br>
+
+        <form action="/recepti/" method="post">
+            <select name="prescription">
                 {% for prescription in prescriptions %}
                 <option value="{{prescription.id}}">{{prescription.name}}</option>
                 {% endfor %}
@@ -46,43 +65,58 @@
                 </tr>
             </thead>
             <tbody>
+                {% for medicine in therapy %}
                 <tr>
-                    <td><img src="{{url_for('static', filename='Images/Products/1vitaminD.webp')}}" alt="Proizvod 1">
+                    <td><img src="/uploads/{{medicine.image}}" alt="{{medicine.name}}">
                     </td>
-                    <td class="nameOfProduct">Vitamin D</td>
+                    <td class="nameOfProduct">{{medicine.name}}</td>
                     <td>
-                        <div class="div-for-quantity"><button class="minusButton">-</button><input type="text" value="1"
-                                id="quantity-products" readonly><button class="plusButton">+</button></div>
+                        <div class="div-for-quantity"><button class="minusButton">-</button><input type="text"
+                                value="{{medicine.quantity}}" id="quantity-products" readonly><button
+                                class="plusButton">+</button></div>
                     </td>
-                    <td><button class="remove-btn">Ukloni</button></td>
+                    <td><a href="/terapija/obrisi/{{medicine.id}}/" class="remove-btn">Ukloni</a></td>
                 </tr>
+                {% else %}
                 <tr>
-                    <td><img src="{{url_for('static', filename='Images/Products/2vitaminA.webp')}}" alt="Proizvod 2">
+                    <td colspan="4">
+                        <h3>Niste izabrali recept, ili nemate nijedan lijek na ovom receptu</h3>
                     </td>
-                    <td class="nameOfProduct">Vitamin A</td>
-                    <td>
-                        <div class="div-for-quantity"><button class="minusButton">-</button><input type="text" value="1"
-                                id="quantity-products" readonly><button class="plusButton">+</button></div>
-                    </td>
-                    <td><button class="remove-btn">Ukloni</button></td>
                 </tr>
-                <tr>
-                    <td><img src="{{url_for('static', filename='Images/Products/4vitaminC.webp')}}" alt="Proizvod 2">
-                    </td>
-                    <td class="nameOfProduct">Vitamin C</td>
-                    <td>
-                        <div class="div-for-quantity"><button class="minusButton">-</button><input type="text" value="1"
-                                id="quantity-products" readonly><button class="plusButton">+</button></div>
-                    </td>
-                    <td><button class="remove-btn">Ukloni</button></td>
-                </tr>
+                {% endfor %}
             </tbody>
         </table>
+        <br>
+        {% if id %}
+        <a href="/recepti/obrisi/{{id}}" class="remove-btn">Obrisi ovaj recept</a>
+        {% endif %}
     </div>
 
     {% include 'components/footer.html' %}
 
     <script src="{{url_for('static', filename='js/tableOfProducts.js')}}"></script>
+
+    <script>
+        var modal = document.getElementById("myModal");
+
+        var btn = document.getElementById("openModal");
+
+        var span = document.getElementsByClassName("close")[0];
+
+        btn.onclick = function () {
+            modal.style.display = "block";
+        }
+
+        span.onclick = function () {
+            modal.style.display = "none";
+        }
+
+        window.onclick = function (event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+    </script>
 
 </body>
 

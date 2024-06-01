@@ -41,7 +41,8 @@
             </div>
             <div class="prescription-select">
                 <label for="prescription">Dodaj na recept:</label>
-                <form action="">
+                <form action="/terapija/dodaj/" method="post">
+                    <input type="hidden" name="medicine" value="{{medicine.id}}">
                     <select id="prescription" name="prescription">
                         {% for prescription in prescriptions %}
                         <option value="{{prescription.id}}">{{prescription.name}}</option>
