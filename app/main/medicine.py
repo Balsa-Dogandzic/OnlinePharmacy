@@ -1,7 +1,9 @@
-from flask import render_template, session, redirect, request
+from flask import render_template, session, redirect, request, current_app
 from app.main import bp
 from app import mysql
 from datetime import datetime
+from werkzeug.utils import secure_filename
+import os
 
 @bp.route('/ljekovi/')
 def all_medicine():
@@ -26,18 +28,39 @@ def medicine(id):
     return "Lijek koji trazite ne postoji"
 
 
-@bp.route('/ljekovi/dodaj/')
-def add_medicine():
+@bp.route('/ljekovi/dodaj/', methods=['GET', 'POST'])
+@bp.route('/ljekovi/dodaj/<int:id>/', methods=['GET', 'POST'])
+def add_medicine(id=None):
     if session.get("user_type") != 2:
         return redirect("/ljekovi/")
-    return "Work in progress..."
-
-
-@bp.route('/ljekovi/promijeni/<int:id>/')
-def update_medicine(id):
-    if session.get("user_type") != 2:
-        return redirect("/ljekovi/")
-    return "Work in progress..."
+    if request.method == 'POST':
+        name = request.form['name']
+        file = request.files['file']
+        filename = secure_filename(file.filename)
+        file.save(os.path.join(current_app.config['UPLOAD_FOLDER'], filename))
+        dose = request.form['dose']
+        description = request.form['description']
+        effect = request.form['effect']
+        price = request.form['price']
+        if id:
+            cursor = mysql.connection.cursor()
+            cursor.execute(f"UPDATE  medicine SET name='{name}', image='{filename}', dose={dose}, description='{description}', effect='{effect}', price={price} WHERE id={id}")
+            mysql.connection.commit()
+            cursor.close()
+            return redirect(f"/ljekovi/{id}/")
+        else:
+            cursor = mysql.connection.cursor()
+            cursor.execute(f"INSERT INTO medicine VALUES (NULL,'{name}','{filename}',{dose},'{description}','{effect}',{price})")
+            mysql.connection.commit()
+            cursor.close()
+            return redirect("/ljekovi/")
+    medicine = None
+    if id:
+        cursor = mysql.connection.cursor()
+        cursor.execute(f"SELECT * FROM medicine WHERE id={id}")
+        medicine = cursor.fetchone()
+        cursor.close()
+    return render_template("product_form.html", medicine=medicine)
 
 
 @bp.route('/ljekovi/obrisi/<int:id>/')

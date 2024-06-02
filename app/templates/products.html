@@ -36,7 +36,7 @@
                 <p>Cijena: {{medicine.price}} €</p>
                 {% if session.get('user_type') == 2 %}
                 <div class="buttons">
-                    <a href="/ljekovi/promijeni/{{medicine.id}}/" class="button">Promijeni</a>
+                    <a href="/ljekovi/dodaj/{{medicine.id}}/" class="button">Promijeni</a>
                     <a href="/ljekovi/obrisi/{{medicine.id}}/" class="button">Obrisi</a>
                 </div>
                 {% endif %}
