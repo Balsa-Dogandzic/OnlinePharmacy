@@ -67,7 +67,10 @@ def add_medicine(id=None):
 def delete_medicine(id):
     if session.get("user_type") != 2:
         return redirect("/ljekovi/")
-    return "Work in progress..."
+    cursor = mysql.connection.cursor()
+    cursor.execute(f"DELETE FROM medicine WHERE id={id}")
+    mysql.connection.commit()
+    return redirect('/ljekovi/')
 
 
 @bp.route('/recepti/', methods=['GET', 'POST'])

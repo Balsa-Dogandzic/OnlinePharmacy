@@ -39,6 +39,7 @@
                     <p><strong>Cijena:</strong> {{medicine.price}} €</p>
                 </div>
             </div>
+            {% if session.get('user_type') == 1 %}
             <div class="prescription-select">
                 <label for="prescription">Dodaj na recept:</label>
                 <form action="/terapija/dodaj/" method="post">
@@ -51,6 +52,7 @@
                     <input type="submit" value="Dodaj" class="prescription-btn">
                 </form>
             </div>
+            {% endif %}
             <div class="description">
                 <h3>Opis:</h3>
                 <p>{{medicine.description|safe}}</p>

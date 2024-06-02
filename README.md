@@ -10,6 +10,4 @@ Pero123
 
 ## TODO
 
-1. Dodavanje ljekova
-2. Mijenjanje ljekova
-3. Brisanje ljekova
+1. Samo stranica za dodavanje ljekova da se napravi na front-u

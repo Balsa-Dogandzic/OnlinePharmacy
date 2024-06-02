@@ -20,4 +20,4 @@ If you can't install from `reqirements.txt` file you can install the manually:
 
 4. Make new MySQL database called "pharmacy" (if you want to name it differently you can edit the source code), then import the database schema from `pharmacy.sql` file
 
-5. If everything went okay, you can run the server by executing `app.py` file
+5. If everything went okay, you can run the server by executing `run.py` file
