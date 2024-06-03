@@ -60,7 +60,7 @@ def add_medicine(id=None):
         cursor.execute(f"SELECT * FROM medicine WHERE id={id}")
         medicine = cursor.fetchone()
         cursor.close()
-    return render_template("product_form.html", medicine=medicine)
+    return render_template("add_item.html", medicine=medicine)
 
 
 @bp.route('/ljekovi/obrisi/<int:id>/')
