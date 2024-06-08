@@ -1,4 +1,4 @@
-from flask import Blueprint, render_template, request, redirect, session
+from flask import render_template, request, redirect, session
 from werkzeug.security import generate_password_hash, check_password_hash
 from app.main import bp
 from app import mysql
